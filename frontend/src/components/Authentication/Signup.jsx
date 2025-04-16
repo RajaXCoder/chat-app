@@ -57,7 +57,7 @@ const Signup = () => {
         },
       };
       const { data } = await axios.post(
-        "/api/user",
+        "http://127.0.0.1:3000/api/user",
         {
           name,
           email,
@@ -106,9 +106,9 @@ const Signup = () => {
     if (pics.type === "image/jpeg" || pics.type === "image/png") {
       const data = new FormData();
       data.append("file", pics);
-      data.append("upload_preset", "chat-app");
-      data.append("cloud_name", "piyushproj");
-      fetch("https://api.cloudinary.com/v1_1/piyushproj/image/upload", {
+      data.append("upload_preset", "chat-app"); //replace your cloud preset
+      data.append("cloud_name", "dsjqgohms"); //replace your cloud name
+      fetch("https://api.cloudinary.com/v1_1/dsjqgohms/image/upload", {
         method: "post",
         body: data,
       })
@@ -116,6 +116,7 @@ const Signup = () => {
         .then((data) => {
           setPic(data.url.toString());
           setPicLoading(false);
+          console.log(data);
         })
         .catch((err) => {
           console.log(err);
