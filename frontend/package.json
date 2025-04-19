@@ -24,6 +24,7 @@
     "@emotion/styled": "^11.14.0",
     "@tailwindcss/vite": "^4.1.4",
     "axios": "^1.8.4",
+    "dotenv": "^16.5.0",
     "framer-motion": "^12.7.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
