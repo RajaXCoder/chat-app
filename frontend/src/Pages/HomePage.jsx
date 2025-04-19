@@ -13,7 +13,7 @@ import { Navigate } from "react-router";
 import Login from "../components/Authentication/Login";
 import Signup from "../components/Authentication/Signup";
 
-function Homepage() {
+const Homepage = () => {
   const user = JSON.parse(localStorage.getItem("userInfo"));
   if (user) {
     return <Navigate to="/chat" />;
@@ -22,7 +22,7 @@ function Homepage() {
   return (
     <Container maxW="xl" centerContent>
       <Box
-        d="flex"
+        display="flex"
         justifyContent="center"
         p={3}
         bg="white"
@@ -53,6 +53,6 @@ function Homepage() {
       </Box>
     </Container>
   );
-}
+};
 
 export default Homepage;

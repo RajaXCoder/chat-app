@@ -61,7 +61,7 @@ const Login = () => {
 
       //   setUser(data);
       localStorage.setItem("userInfo", JSON.stringify(data));
-      navigate("/chats"); // ✅ useNavigate instead of history.push
+      navigate("/chat"); // ✅ useNavigate instead of history.push
     } catch (error) {
       toast({
         title: "Error occurred!",
@@ -78,7 +78,7 @@ const Login = () => {
 
   return (
     <VStack spacing="10px">
-      <FormControl id="email" isRequired>
+      <FormControl id="email-1" isRequired>
         <FormLabel>Email Address</FormLabel>
         <Input
           value={email}

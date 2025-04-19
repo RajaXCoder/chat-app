@@ -1,7 +1,6 @@
 const asyncHandler = require("express-async-handler");
 const User = require("../models/userModel");
 const generateToken = require("../config/generateToken");
-const colors = require("colors");
 
 //@description     Get or Search all users
 //@route           GET /api/user?search=
@@ -28,14 +27,14 @@ const registerUser = asyncHandler(async (req, res) => {
 
   if (!name || !email || !password) {
     res.status(400);
-    throw new Error("Please Enter all the Feilds".red.bold);
+    throw new Error("Please Enter all the Feilds");
   }
 
   const userExists = await User.findOne({ email });
 
   if (userExists) {
     res.status(400);
-    throw new Error("User already exists".red.bold);
+    throw new Error("User already exists");
   }
 
   const user = await User.create({
@@ -56,7 +55,7 @@ const registerUser = asyncHandler(async (req, res) => {
     });
   } else {
     res.status(400);
-    throw new Error("User not found".red.bold);
+    throw new Error("User not found");
   }
 });
 
@@ -79,7 +78,7 @@ const authUser = asyncHandler(async (req, res) => {
     });
   } else {
     res.status(401);
-    throw new Error("Invalid Email or Password".red.bold);
+    throw new Error("Invalid Email or Password");
   }
 });
 
