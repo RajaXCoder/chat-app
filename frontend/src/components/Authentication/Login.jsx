@@ -24,6 +24,8 @@ const Login = () => {
   const navigate = useNavigate(); // ✅ useNavigate instead of useHistory
   //   const { setUser } = ChatState();
 
+  const URL = import.meta.env.VITE_API_URL;
+
   const submitHandler = async () => {
     setLoading(true);
     if (!email || !password) {
@@ -46,7 +48,7 @@ const Login = () => {
       };
 
       const { data } = await axios.post(
-        "http://127.0.0.1:3000/api/user/login",
+        `${URL}/api/user/login`,
         { email, password },
         config
       );

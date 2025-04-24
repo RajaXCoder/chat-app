@@ -12,6 +12,8 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+const URL = import.meta.env.VITE_API_URL;
+
 const Signup = () => {
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
@@ -57,7 +59,7 @@ const Signup = () => {
         },
       };
       const { data } = await axios.post(
-        "http://127.0.0.1:3000/api/user",
+        `${URLs}/api/user`,
         {
           name,
           email,
